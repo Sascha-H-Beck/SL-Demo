@@ -14,6 +14,22 @@
 	<Description>A simple Voltage Test WPF application.</Description>
 	<AssemblyVersion>1.0.0.0</AssemblyVersion>
 	<FileVersion>1.0.0.0</FileVersion>
+
+	  <!-- 1. Erzwingt absolut jede DLL (inkl. SkiaSharp & CoreCLR) in die EXE -->
+	  <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+
+	  <!-- 2. Aktiviert das Zusammenfassen in eine einzige Datei -->
+	  <PublishSingleFile>true</PublishSingleFile>
+
+	  <!-- 3. Integriert die .NET-Laufzeitumgebung (Self-Contained) -->
+	  <SelfContained>true</SelfContained>
+
+	  <!-- 4. Verhindert das Erzeugen von losen Sprachordnern (de, fr, es...) -->
+	  <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
+
+	  <!-- 5. Löscht lose Debug-Dateien (.pdb) komplett aus dem Release -->
+	  <DebugType>none</DebugType>
+	  <DebugSymbols>false</DebugSymbols>
 	  
 	  
 	  
@@ -35,7 +51,6 @@
     <Resource Include="logo-schleich.png" />
   </ItemGroup>
 
-  <!-- Prevent automatic ApplicationDefinition-generated Main so we can provide an explicit entry point -->
   <ItemGroup>
 	<ApplicationDefinition Remove="App.xaml" />
 	<Page Include="App.xaml" />
