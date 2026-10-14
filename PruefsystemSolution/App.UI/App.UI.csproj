@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<RootNamespace>App.UI</RootNamespace>
+	<Authors>Sascha H. Beck</Authors>
+	<Company>NA</Company>
+	<Product>Schleich Demo</Product>
+	<Copyright>Copyright © 2026</Copyright>
+	<Description>A simple Voltage Test WPF application.</Description>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
+	  
+	  
+	  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="logo-schleich.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ScottPlot.WPF" Version="5.1.59" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App.Core\App.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo-schleich.png" />
+  </ItemGroup>
+
+  <!-- Prevent automatic ApplicationDefinition-generated Main so we can provide an explicit entry point -->
+  <ItemGroup>
+	<ApplicationDefinition Remove="App.xaml" />
+	<Page Include="App.xaml" />
+  </ItemGroup>
+
+</Project>

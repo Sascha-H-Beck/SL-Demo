@@ -1,0 +1,48 @@
+PruefsystemSolution/.vs
+# Build outputs and directories
+[Db]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio user-specific files and caches
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.github
+
+# Roslyn and compiler tool caches
+.analyzerdata/
+.fakes/
+
+# Test and Code Coverage artifacts
+TestResult/
+*.dmg
+*.xmlperf
+*.coverage
+*.coveragexml
+
+# JetBrains Rider & ReSharper files
+.idea/
+_ReSharper.*/
+*.csproj.DotSettings.user
+
+# Visual Studio Code files
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Local / Environment configurations
+*.env
+*.env.local
+
+# Backup and temporary files
+*.bak
+*.tmp
+*.log

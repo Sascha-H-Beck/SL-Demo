@@ -1,0 +1,57 @@
+﻿
+<Window x:Class="App.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:App.Core.ViewModels;assembly=App.Core"
+        xmlns:scottplot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+        mc:Ignorable="d"
+        Title="Prüfsystem Kontrollzentrum" Height="450" Width="800"
+        Background="#F5F6F8"
+        WindowStartupLocation="CenterScreen"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Steuerungspanel: Buttons links, flexibler Spacer, Image rechts (auf einer Linie, innerhalb derselben Gruppe) -->
+        <Grid Grid.Row="0" Margin="0,0,0,20" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Button x:Name="StartButton" Content="▶ Messung Starten" Command="{Binding StartMeasurementCommand}" Click="StartButton_Click" Padding="15,8" Margin="0,0,10,0" Background="#007ACC" Foreground="White" FontWeight="Bold"/>
+                <Button Content="⏸ Stoppen" Command="{Binding StopMeasurementCommand}" Padding="15,8" Background="#D11A2A" Foreground="White" FontWeight="Bold" Margin="0,0,10,0"/>
+                <TextBlock Text="{Binding CurrentValue, StringFormat={}{0:F2} V}" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="#222"/>
+            </StackPanel>
+
+            <!-- flexibler Spacer in Grid.Column=1 -->
+
+            <Image Grid.Column="2" Height="40" Width="100" Source="/logo-schleich.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0" Cursor="Help"/>
+        </Grid>
+
+        <!-- Daten-Visualisierung mit echtem Live-Plot -->
+        <Border Grid.Row="1" Background="White" CornerRadius="5" BorderBrush="#DDD" BorderThickness="1" ClipToBounds="True">
+            <scottplot:WpfPlot x:Name="LivePlotControl" />
+        </Border>
+
+        <!-- Statusleiste -->
+        <StatusBar Grid.Row="2" Background="Transparent" Margin="0,10,0,0">
+            <StatusBarItem>
+                <TextBlock Text="{Binding StatusMessage}" Foreground="#555"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
+    
+    
+    
+    
