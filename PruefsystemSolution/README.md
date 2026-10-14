@@ -58,3 +58,21 @@ Mit `dotnet` CLI
 ## Lizenz
 
 Keine Lizenz angegeben.
+
+## Beispiele
+
+
+### Anwendung Start:
+
+![Service Stopped](https://raw.githubusercontent.com/Sascha-H-Beck/SL-Demo/main/PruefsystemSolution/Resources/Start-Application.png)
+
+
+### Anwendung Angehalten:
+
+![Service Stopped](https://raw.githubusercontent.com/Sascha-H-Beck/SL-Demo/main/PruefsystemSolution/Resources/Stopped-Application.png)
+
+
+### Anwendung Skaliert - Plot Zoom :
+
+![Service Stopped](https://raw.githubusercontent.com/Sascha-H-Beck/SL-Demo/main/PruefsystemSolution/Resources/Scaled-Window-and-Plot-Application.png)
+
